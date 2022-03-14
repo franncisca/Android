@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="value_of_the_dice">Value du dé: ?</string>
+    <string name="quit">Quitter</string>
+    <string name="name_of_the_string">Sortie de l\'activité en cours</string>
+</resources>

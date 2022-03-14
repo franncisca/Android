@@ -2,5 +2,5 @@
     <string name="app_name">TP1</string>
     <string name="value_of_the_dice">Value of the dice: ?</string>
     <string name="quit">Quit</string>
-    <string name="name_of_the_string">Let\'s quit the game</string>
+    <string name="name_of_the_string">Let\'s quit the activity</string>
 </resources>
