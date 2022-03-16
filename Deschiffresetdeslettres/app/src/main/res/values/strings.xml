@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Des chiffres et des lettres</string>
+    <string name="change">next</string>
+    <string name="input_your_answer">Input your answer</string>
+</resources>
