@@ -17,7 +17,10 @@ class MainActivity : AppCompatActivity() {
         //drawTextView.setOnClickListener{drawTextView.text = letterPicker.pickLetters(9)}
         //Log.d( "msg: ",s)}
 
-        val button = findViewById<Button>(R.id.nextButton)
+        val button by lazy { findViewById<Button>(R.id.nextButton) }
         button.setOnClickListener{drawTextView.text = letterPicker.pickLetters(9)}
     }
+
+
+
 }
