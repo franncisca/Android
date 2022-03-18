@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Des chiffres et des lettres</string>
-    <string name="change">start</string>
-    <string name="input_answer">Input your answer</string>
+    <string name="change">New game</string>
+    <string name="input_answer">Your proposition</string>
     <string name="next_button">Click the button to start the game</string>
     <string name="display">Your answer :</string>
 </resources>
