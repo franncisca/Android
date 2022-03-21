@@ -13,10 +13,13 @@ class MainActivity : AppCompatActivity() {
     val startButton by lazy { findViewById<Button>(R.id.startButton) }
     val validButton by lazy { findViewById<Button>(R.id.validButton) }
     val propositionText by lazy { findViewById<EditText>(R.id.proposition) }
-    val answerText by lazy { findViewById<TextView>(R.id.answer) }
+    val displayAnswer by lazy { findViewById<TextView>(R.id.display) }
+
+
+    //val anagram = letterPicker.pickLetters(9);
 
     var bestAnagrams = listOf<String>();
-    var biggestSize = 0
+    var maxSize = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,29 +32,43 @@ class MainActivity : AppCompatActivity() {
 
         validButton.setOnClickListener {
             var currentText = propositionText.text
-            if (currentText.length >= biggestSize) {
-                biggestSize = currentText.length;
+
+            if (! bestAnagrams.contains(currentText.toString()) && currentText.length >= maxSize) {
+                maxSize = currentText.length;
                 bestAnagrams = bestAnagrams + listOf<String>(currentText.toString())
-                answerText.text = bestAnagrams.toString();
+                displayAnswer.text = bestAnagrams.toString();
             }
         }
     }
 
-
-}
-
-/* Determine if the parameter is an anagram of `this`
+    /* Determine if the parameter is an anagram of `this`
 * proposition must contain only letters of `this` (with the same or different order)
 */
-fun String.containsAnagram(proposition: String): Boolean {
-    var answer = "answer";
-    for (s in proposition) {
-        if (s !in answer) {
-            return false
+    fun String.containsAnagram(proposition: String): Boolean {
+        var tabAnagram = IntArray(26);
+        var tabPropo= IntArray(26);
+        for (c in proposition) {
+            if (c !in drawTextView.text.toString() ) {
+                return false
+            }
+            tabPropo[c - 'a']++
         }
 
+        for(letter in drawTextView.text.toString() ){
+            tabAnagram[letter-'a'] ++
+        }
+
+        for (index in 0..26){
+            if (tabPropo[index] > tabAnagram[index]){
+                return false;
+            }
+        }
+        return true;
     }
-    return false
+
+
 }
+
+
 
 
