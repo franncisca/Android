@@ -2,6 +2,7 @@ package com.example.deschiffresetdeslettres
 
 import android.content.Context
 import java.security.AccessControlContext
+import java.util.*
 
 data class CumulateFrequency(val letter: Char, val frequency: Int)
 
@@ -57,6 +58,7 @@ class LetterPicker(frequencies: Map<Char, Int>) {
                 .useLines { lineSeq -> lineSeq.mapNotNull { it.toCharIntPair() }.toMap()
                     .let { LetterPicker(it) }
                 }
+
 
     }
 
